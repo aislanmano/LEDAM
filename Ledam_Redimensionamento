@@ -1,0 +1,261 @@
+# LEDAM - Leaf Damage - Danos nas Folhas
+import cv2
+import os
+
+def getIMG256Lagarta(input_dir, output_dir):
+    print('LEDAM - Lagarta - INICIO: Processamento de Imagens - 256x256.\n')    
+    caminhos = [os.path.join(input_dir, f) for f in os.listdir(input_dir)]    
+        
+    qtdepixels = 256
+    idnomeimg = 1
+    for CaminhoImagem in caminhos:
+        eixoY = 0
+        altura = qtdepixels
+        eixoX = 0
+        largura = qtdepixels
+        imagemoriginal = cv2.imread(CaminhoImagem)
+        larguraoriginal = imagemoriginal.shape[1] # largura da imagem
+        alturaoriginal  = imagemoriginal.shape[0] # altura da imagem
+
+        qtderecortesimagemlargura = larguraoriginal / qtdepixels
+        qtderecortesimagemaltura = alturaoriginal / qtdepixels
+
+        qtderecortesimagemlargura = int(qtderecortesimagemlargura)
+        qtderecortesimagemaltura = int(qtderecortesimagemaltura)
+                
+        id = 1
+        for i in range(qtderecortesimagemaltura):
+            for l in range(qtderecortesimagemlargura):
+                imagem  = imagemoriginal[eixoY:eixoY+altura, eixoX:eixoX+largura]
+                cv2.imwrite(output_dir + "IMGLagarta"+ str(idnomeimg) + "_" + str(id) + ".jpg", imagem)
+                eixoX   = eixoX + qtdepixels + 1                
+                id = id + 1                    
+            eixoX = 0
+            eixoY = eixoY + qtdepixels + 1
+        idnomeimg = idnomeimg + 1
+
+    print('LEDAM - Lagarta - TERMINO: Processamento de Imagens - 256x256.\n\n')
+
+def getIMG256Vaquinha(input_dir, output_dir):
+    print('LEDAM - Vaquinha - INICIO: Processamento de Imagens - 256x256.\n')
+    caminhos = [os.path.join(input_dir, f) for f in os.listdir(input_dir)]    
+        
+    qtdepixels = 256
+    idnomeimg = 1
+    for CaminhoImagem in caminhos:
+        eixoY = 0
+        altura = qtdepixels
+        eixoX = 0
+        largura = qtdepixels
+        imagemoriginal = cv2.imread(CaminhoImagem)
+        larguraoriginal = imagemoriginal.shape[1] # largura da imagem
+        alturaoriginal  = imagemoriginal.shape[0] # altura da imagem
+
+        qtderecortesimagemlargura = larguraoriginal / qtdepixels
+        qtderecortesimagemaltura = alturaoriginal / qtdepixels
+
+        qtderecortesimagemlargura = int(qtderecortesimagemlargura)
+        qtderecortesimagemaltura = int(qtderecortesimagemaltura)
+                
+        id = 1        
+        for i in range(qtderecortesimagemaltura):
+            for l in range(qtderecortesimagemlargura):
+                imagem  = imagemoriginal[eixoY:eixoY+altura, eixoX:eixoX+largura]
+                cv2.imwrite(output_dir + "IMGVaquinha"+ str(idnomeimg) + "_" + str(id) + ".jpg", imagem)
+                eixoX   = eixoX + qtdepixels + 1
+                id = id + 1                    
+            eixoX = 0
+            eixoY = eixoY + qtdepixels + 1
+        idnomeimg = idnomeimg + 1
+    print('LEDAM - Vaquinha - TERMINO: Processamento de Imagens - 256x256.\n\n')
+
+def getIMG256Neutra(input_dir, output_dir):
+    print('LEDAM - Neutra - INICIO: Processamento de Imagens - 256x256.\n')
+    caminhos = [os.path.join(input_dir, f) for f in os.listdir(input_dir)]
+        
+    qtdepixels = 256
+    idnomeimg = 1
+    for CaminhoImagem in caminhos:
+        eixoY = 0
+        altura = qtdepixels
+        eixoX = 0
+        largura = qtdepixels
+        imagemoriginal = cv2.imread(CaminhoImagem)
+        larguraoriginal = imagemoriginal.shape[1] # largura da imagem
+        alturaoriginal  = imagemoriginal.shape[0] # altura da imagem
+
+        qtderecortesimagemlargura = larguraoriginal / qtdepixels
+        qtderecortesimagemaltura = alturaoriginal / qtdepixels
+
+        qtderecortesimagemlargura = int(qtderecortesimagemlargura)
+        qtderecortesimagemaltura = int(qtderecortesimagemaltura)
+                
+        id = 1
+        for i in range(qtderecortesimagemaltura):
+            for l in range(qtderecortesimagemlargura):
+                imagem  = imagemoriginal[eixoY:eixoY+altura, eixoX:eixoX+largura]
+                cv2.imwrite(output_dir + "IMGNeutra"+ str(idnomeimg) + "_" + str(id) + ".jpg", imagem)
+                eixoX   = eixoX + qtdepixels + 1
+                id = id + 1                    
+            eixoX = 0
+            eixoY = eixoY + qtdepixels + 1 
+        idnomeimg = idnomeimg + 1
+    print('LEDAM - Neutra - TERMINO: Processamento de Imagens - 256x256.\n\n')
+
+
+def getIMG512Lagarta(input_dir, output_dir):
+    print('LEDAM - Lagarta - INICIO: Processamento de Imagens - 512x512.\n')
+    caminhos = [os.path.join(input_dir, f) for f in os.listdir(input_dir)]
+        
+    qtdepixels = 512
+    idnomeimg = 1
+    for CaminhoImagem in caminhos:
+        eixoY = 0
+        altura = qtdepixels
+        eixoX = 0
+        largura = qtdepixels
+        imagemoriginal = cv2.imread(CaminhoImagem)
+        larguraoriginal = imagemoriginal.shape[1] # largura da imagem
+        alturaoriginal  = imagemoriginal.shape[0] # altura da imagem
+
+        qtderecortesimagemlargura = larguraoriginal / qtdepixels
+        qtderecortesimagemaltura = alturaoriginal / qtdepixels
+
+        qtderecortesimagemlargura = int(qtderecortesimagemlargura)
+        qtderecortesimagemaltura = int(qtderecortesimagemaltura)
+                
+        id = 1
+        for i in range(qtderecortesimagemaltura):
+            for l in range(qtderecortesimagemlargura):
+                imagem  = imagemoriginal[eixoY:eixoY+altura, eixoX:eixoX+largura]
+                cv2.imwrite(output_dir + "IMGLagarta"+ str(idnomeimg) + "_" + str(id) + ".jpg", imagem)
+                eixoX   = eixoX + qtdepixels + 1                
+                id = id + 1                    
+            eixoX = 0
+            eixoY = eixoY + qtdepixels + 1
+        idnomeimg = idnomeimg + 1
+    print('LEDAM - Lagarta - TERMINO: Processamento de Imagens - 512x512.\n\n')
+
+def getIMG512Vaquinha(input_dir, output_dir):
+    print('LEDAM - Vaquinha - INICIO: Processamento de Imagens - 512x512.\n')
+    caminhos = [os.path.join(input_dir, f) for f in os.listdir(input_dir)]    
+        
+    qtdepixels = 512
+    idnomeimg = 1
+    for CaminhoImagem in caminhos:
+        eixoY = 0
+        altura = qtdepixels
+        eixoX = 0
+        largura = qtdepixels
+        imagemoriginal = cv2.imread(CaminhoImagem)
+        larguraoriginal = imagemoriginal.shape[1] # largura da imagem
+        alturaoriginal  = imagemoriginal.shape[0] # altura da imagem
+
+        qtderecortesimagemlargura = larguraoriginal / qtdepixels
+        qtderecortesimagemaltura = alturaoriginal / qtdepixels
+
+        qtderecortesimagemlargura = int(qtderecortesimagemlargura)
+        qtderecortesimagemaltura = int(qtderecortesimagemaltura)
+                
+        id = 1        
+        for i in range(qtderecortesimagemaltura):
+            for l in range(qtderecortesimagemlargura):
+                imagem  = imagemoriginal[eixoY:eixoY+altura, eixoX:eixoX+largura]
+                cv2.imwrite(output_dir + "IMGVaquinha"+ str(idnomeimg) + "_" + str(id) + ".jpg", imagem)
+                eixoX   = eixoX + qtdepixels + 1
+                id = id + 1                    
+            eixoX = 0
+            eixoY = eixoY + qtdepixels + 1
+        idnomeimg = idnomeimg + 1
+    print('LEDAM - Vaquinha - TERMINO: Processamento de Imagens - 512x512.\n\n')
+
+def getIMG512Neutra(input_dir, output_dir):
+    print('LEDAM - Neutra - INICIO: Processamento de Imagens - 512x512.\n')
+    caminhos = [os.path.join(input_dir, f) for f in os.listdir(input_dir)]
+        
+    qtdepixels = 512
+    idnomeimg = 1
+    for CaminhoImagem in caminhos:
+        eixoY = 0
+        altura = qtdepixels
+        eixoX = 0
+        largura = qtdepixels
+        imagemoriginal = cv2.imread(CaminhoImagem)
+        larguraoriginal = imagemoriginal.shape[1] # largura da imagem
+        alturaoriginal  = imagemoriginal.shape[0] # altura da imagem
+
+        qtderecortesimagemlargura = larguraoriginal / qtdepixels
+        qtderecortesimagemaltura = alturaoriginal / qtdepixels
+
+        qtderecortesimagemlargura = int(qtderecortesimagemlargura)
+        qtderecortesimagemaltura = int(qtderecortesimagemaltura)
+                
+        id = 1
+        for i in range(qtderecortesimagemaltura):
+            for l in range(qtderecortesimagemlargura):
+                imagem  = imagemoriginal[eixoY:eixoY+altura, eixoX:eixoX+largura]
+                cv2.imwrite(output_dir + "IMGNeutra"+ str(idnomeimg) + "_" + str(id) + ".jpg", imagem)
+                eixoX   = eixoX + qtdepixels + 1
+                id = id + 1                    
+            eixoX = 0
+            eixoY = eixoY + qtdepixels + 1 
+        idnomeimg = idnomeimg + 1
+    print('LEDAM - Neutra - TERMINO: Processamento de Imagens - 512x512.\n\n')
+
+if __name__ == "__main__":           
+    tamanho256 = (256,256)
+    tamanho512 = (512,512)
+
+    # Teste
+    diretorio_origem_lagarta_teste = '/home/administrador/Documents/ProjetosPython/Imagens/ImagensTeste/lagarta'
+    diretorio_origem_neutra_teste = '/home/administrador/Documents/ProjetosPython/Imagens/ImagensTeste/neutra'
+    diretorio_origem_vaquinha_teste = '/home/administrador/Documents/ProjetosPython/Imagens/ImagensTeste/vaquinha'
+
+    diretorio_saida_256 = '/home/administrador/Documents/ProjetosPython/VersaoFinal/Teste/256semtecnica/'
+    diretorio_saida_512 = '/home/administrador/Documents/ProjetosPython/VersaoFinal/Teste/512semtecnica/'
+
+    # Treino
+    diretorio_origem_lagarta_treino_cel = '/home/administrador/Documents/ProjetosPython/Imagens/ImagensTreino/imagenscelularpadronizar/Imagenslagartacelular'
+    diretorio_origem_neutra_treino_cel = '/home/administrador/Documents/ProjetosPython/Imagens/ImagensTreino/imagenscelularpadronizar/Imagenssaudaveiscelular'
+    diretorio_origem_vaquinha_treino_cel = '/home/administrador/Documents/ProjetosPython/Imagens/ImagensTreino/imagenscelularpadronizar/imagensvaquinhascelular'
+
+    diretorio_saida_256_cel = '/home/administrador/Documents/ProjetosPython/VersaoFinal/Treino/256semtecnicaCelular/'
+    diretorio_saida_512_cel = '/home/administrador/Documents/ProjetosPython/VersaoFinal/Treino/500semtecnicaCelular/'
+
+    diretorio_origem_lagarta_treino_drone = '/home/administrador/Documents/ProjetosPython/Imagens/ImagensTreino/imagensdronepadronizar/Imagenslagartasdrones'
+    diretorio_origem_neutra_treino_drone = '/home/administrador/Documents/ProjetosPython/Imagens/ImagensTreino/imagensdronepadronizar/Imagenssaudaveisdrone'
+    diretorio_origem_vaquinha_treino_drone = '/home/administrador/Documents/ProjetosPython/Imagens/ImagensTreino/imagensdronepadronizar/Imagensvaquinhasdrones'
+
+    diretorio_saida_256_drone = '/home/administrador/Documents/ProjetosPython/VersaoFinal/Treino/256semtecnicaDrone/'
+    diretorio_saida_512_drone = '/home/administrador/Documents/ProjetosPython/VersaoFinal/Treino/500semtecnicaDrone/'
+
+    # IMAGENS DE TREINO - ABAIXO REDIMENSIONAMENTO SEM TÉCNICA - 256 X 256
+    # Processamento de Imagens com as Imagens de Treino - Sem Técnica de melhora da imagem
+    getIMG256Lagarta(diretorio_origem_lagarta_treino_cel, diretorio_saida_256_cel)
+    getIMG256Vaquinha(diretorio_origem_neutra_treino_cel, diretorio_saida_256_cel)
+    getIMG256Neutra(diretorio_origem_vaquinha_treino_cel, diretorio_saida_256_cel)
+
+    getIMG256Lagarta(diretorio_origem_lagarta_treino_drone, diretorio_saida_256_drone)
+    getIMG256Vaquinha(diretorio_origem_neutra_treino_drone, diretorio_saida_256_drone)
+    getIMG256Neutra(diretorio_origem_vaquinha_treino_drone, diretorio_saida_256_drone) 
+
+    # Processamento de Imagens com as Imagens de Teste - Sem Técnica de melhora da imagem
+    getIMG256Lagarta(diretorio_origem_lagarta_teste, diretorio_saida_256)
+    getIMG256Vaquinha(diretorio_origem_neutra_teste, diretorio_saida_256)
+    getIMG256Neutra(diretorio_origem_vaquinha_teste, diretorio_saida_256)
+
+    
+    # IMAGENS DE TESTE - ABAIXO REDIMENSIONAMENTO SEM TÉCNICA - 512 X 512
+    # Processamento de Imagens com as Imagens de Treino - Sem Técnica de melhora da imagem
+    getIMG512Lagarta(diretorio_origem_lagarta_treino_cel, diretorio_saida_512_cel)
+    getIMG512Vaquinha(diretorio_origem_neutra_treino_cel, diretorio_saida_512_cel)
+    getIMG512Neutra(diretorio_origem_vaquinha_treino_cel, diretorio_saida_512_cel)
+
+    getIMG512Lagarta(diretorio_origem_lagarta_treino_drone, diretorio_saida_512_drone)
+    getIMG512Vaquinha(diretorio_origem_neutra_treino_drone, diretorio_saida_512_drone)
+    getIMG512Neutra(diretorio_origem_vaquinha_treino_drone, diretorio_saida_512_drone)    
+
+    # Processamento de Imagens com as Imagens de Teste - Sem Técnica de melhora da imagem
+    getIMG512Lagarta(diretorio_origem_lagarta_teste, diretorio_saida_512)
+    getIMG512Vaquinha(diretorio_origem_neutra_teste, diretorio_saida_512)
+    getIMG512Neutra(diretorio_origem_vaquinha_teste, diretorio_saida_512)  
